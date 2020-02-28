@@ -11,10 +11,10 @@
 
 <body>
 
-    <div id="app">
+    <div id="app" v-bind:style="{background:'#' + color}">
         <img v-on:mouseover="toogleShowPrices" v-on:mouseout="toogleShowPrices" v-bind:src="img" v-bind:alt="name">
         <h1 v-bind:class="changePercent > 0 ? 'green' : 'red'">
-            {{name}}
+            {{title}}
             <span v-if="changePercent > 0 ">Ok</span>
             <span v-else-if="changePercent < 0">So</span>
             <span v-else>Not ok</span>
@@ -25,6 +25,13 @@
                 {{index}} --{{p.day}} -- {{p.value}}
             </li>
         </ul>
+
+        <div>
+            <input type="text" name="" id="" v-model="value">
+            <span>
+                {{converterValue}}
+            </span>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
